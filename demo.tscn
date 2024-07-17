@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://d4mfkxcno6p8e"]
+
+[ext_resource type="PackedScene" uid="uid://dxw7cledbpiia" path="res://addons/proto-csgs/proto_csg_box_3d.tscn" id="1_2s056"]
+[ext_resource type="Sky" uid="uid://rv6xoija7hdo" path="res://skybox/surf_mesa.tres" id="1_m0sxe"]
+[ext_resource type="Texture2D" uid="uid://cd3fcinti1un5" path="res://addons/proto-csgs/textures/dark/texture_01.png" id="2_hfdot"]
+
+[sub_resource type="Environment" id="Environment_cfbvh"]
+background_mode = 2
+sky = ExtResource("1_m0sxe")
+tonemap_mode = 2
+ssao_enabled = true
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bxejk"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("2_hfdot")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0w4l7"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("2_hfdot")
+uv1_triplanar = true
+
+[node name="Demo" type="Node"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_cfbvh")
+
+[node name="Plane" parent="." instance=ExtResource("1_2s056")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+size = Vector3(20, 0.5, 20)
+material = SubResource("StandardMaterial3D_bxejk")
+
+[node name="ProtoCSGBox3D" parent="." instance=ExtResource("1_2s056")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 0)
+size = Vector3(2, 2, 2)
+material = SubResource("StandardMaterial3D_0w4l7")
