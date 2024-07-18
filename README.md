@@ -1,4 +1,4 @@
-# Godot Dev Blocks
+# Godot CSG Dev Blocks
 
 ![Preview](https://i.imgur.com/BwFOU20.png)
 
