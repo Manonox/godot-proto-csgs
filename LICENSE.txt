@@ -1,9 +1,9 @@
 
 
-	Godot Dev Blocks
+	Godot CSG Dev Blocks
 
 	Created by Manonox (manonox.com)
-	Creation date: 15-08-2022
+	Creation date: 16-07-2024
 
 			------------------------------
 
