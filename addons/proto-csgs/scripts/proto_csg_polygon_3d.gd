@@ -37,7 +37,7 @@ enum PROTOCSG_STYLE {
 
 
 func _ready() -> void:
-	update_proto_texture()
+	pass #if !Engine.is_editor_hint(): update_proto_texture()
 
 func update_proto_texture() -> void:
 	if proto_csg_component == null:
